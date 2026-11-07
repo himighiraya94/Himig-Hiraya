@@ -537,3 +537,26 @@ body {
         font-size: 3rem;
     }
 }
+
+/* --- Hero Donate Button --- */
+.hero-donate-btn {
+    display: inline-block;
+    margin-top: 1.25rem;
+    padding: 0.8rem 2.2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #0f172a;
+    background: var(--accent-blue, #38bdf8);
+    border-radius: 999px;
+    box-shadow: 0 0 18px rgba(56, 189, 248, 0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-donate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 26px rgba(56, 189, 248, 0.7);
+}
