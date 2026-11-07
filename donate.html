@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Himig Hiraya</title>
+    <link rel="icon" type="image/png" href="HH Logo.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles8.css">
+    <link rel="stylesheet" href="styles2.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="HH Logo.png" alt="Himig Hiraya Logo" class="nav-logo-img">
+            </a>
+
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="nav-wrapper" id="nav-wrapper">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="aboutus.html" class="nav-link">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="people.html" class="nav-link">
+                            People of Himig Hiraya <i class="fa-solid fa-chevron-down nav-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="people.html">Founding Leadership Council</a></li>
+                            <li><a href="director.html">Functional Leadership Assignments</a></li>
+                            <li><a href="executive.html">Executive Officers and Associates</a></li>
+                            <li><a href="roster.html">Roster of Members</a></li>
+                            <li><a href="media.html">HH Media Team</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="recruitment.html" class="nav-link">Recruitment</a></li>
+                    <li><a href="events.html" class="nav-link">Events</a></li>
+                    <li><a href="donate.html" class="nav-link active">Donate</a></li>
+                    <li><a href="contactus.html" class="nav-link">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="portal-header">
+            <h1 class="contact-main-title">SUPPORT HIMIG HIRAYA</h1>
+        </section>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h2 class="contact-handle">Your gift helps us share hope, dreams and aspirations through music.</h2>
+                <p style="margin-top:1.5rem;">
+                    <a href="https://donate.himighiraya.xyz/donate-now" target="_blank" rel="noopener noreferrer"
+                       style="display:inline-block;padding:0.9rem 2.2rem;background:#38bdf8;color:#0f172a;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;border-radius:999px;text-decoration:none;">
+                        Donate Now
+                    </a>
+                </p>
+                <p class="contact-label" style="margin-top:1.25rem;">Questions about giving? HIMIG.HIRAYA94@GMAIL.COM</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            &copy; 2026 All rights reserved
+        </div>
+        <div class="footer-right">
+            <p>Powered by: </p>
+            <img src="HH Media.png" alt="Technomancer" class="footer-logo">
+        </div>
+    </div>
+</footer>
+
+    <script>
+        const mobileToggle = document.getElementById('mobile-menu-toggle');
+        const navWrapper = document.getElementById('nav-wrapper');
+        
+        if (mobileToggle && navWrapper) {
+            mobileToggle.addEventListener('click', () => {
+                navWrapper.classList.toggle('active');
+                
+                const icon = mobileToggle.querySelector('i');
+                if (navWrapper.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                } else {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        }
+
+        // Mobile Dropdown Tap Handler
+        const dropdownLinks = document.querySelectorAll('.dropdown > a');
+        dropdownLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 1024) {
+                    const dropdownParent = link.parentElement;
+                    
+                    if (!dropdownParent.classList.contains('open')) {
+                        e.preventDefault();
+                        
+                        document.querySelectorAll('.dropdown.open').forEach(openDropdown => {
+                            if (openDropdown !== dropdownParent) {
+                                openDropdown.classList.remove('open');
+                            }
+                        });
+                        
+                        dropdownParent.classList.add('open');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
